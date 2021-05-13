@@ -39,5 +39,13 @@
           pkgs.heroku # for deployment
         ]);
       })).env;
+
+    dockerImage =
+      let pkg = defaultPackage.${system}; in pkgs.dockerTools.buildImage {
+        name       = pkg.pname;
+        tag        = pkg.version;
+        contents   = [ pkg pkgs.bash ];
+        config.Cmd = [ "${pkg}/bin/is3" ];
+      };
   };
 }
