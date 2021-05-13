@@ -1,0 +1,25 @@
+name:        is3
+version:     0.1.0.0
+synopsis:    Is it 3?
+description: Servant API to calculate the difficult question of whether a number is 3
+category:    Web
+github:      chuahou/is3
+maintainer:  Chua Hou <human+github@chuahou.dev>
+
+ghc-options:
+    - -Wall
+    - -fwarn-incomplete-uni-patterns
+    - -fwarn-incomplete-record-updates
+    - -static
+    - -threaded
+
+default-extensions:
+    - LambdaCase
+    - TupleSections
+
+executable:
+    main: Server.hs
+
+dependencies:
+    - base     >= 4.13 && < 5
+    - servant ^>= 0.16.2
