@@ -14,12 +14,18 @@ ghc-options:
     - -threaded
 
 default-extensions:
+    - DataKinds
+    - DeriveGeneric
     - LambdaCase
     - TupleSections
+    - TypeOperators
 
 executable:
     main: Server.hs
 
 dependencies:
-    - base     >= 4.13 && < 5
-    - servant ^>= 0.16.2
+    - base            >= 4.13 && < 5
+    - aeson          ^>= 1.4.7.1
+    - servant        ^>= 0.16.2
+    - servant-server ^>= 0.16.2
+    - warp           ^>= 3.3.13
